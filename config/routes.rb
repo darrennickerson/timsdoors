@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :products
   
-  root 'static#home'
+  root 'landing#home'
   resources :contacts
   get 'thank-you', to: 'contacts#confirmation'
 
