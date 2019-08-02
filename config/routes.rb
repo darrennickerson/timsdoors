@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'landing/home'
   resources :invoices
   resources :categories
   resources :products
