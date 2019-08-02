@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tim's Overhead Doors</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container"> 
+  <div class="brand">
+  <%= image_tag('timsdoors.png') %>
+  <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+  </div>
+
+  <nav>
+  <ul>
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Services', services_path %></li>
+  <li> <%= link_to 'About', about_path %></li>
+  <li><%= link_to 'Customer Area', '#' %></li>
+  <li><%= link_to 'Contact Us', contact_us_path %></li>
+  </ul>
+</nav>
+</div>
+<div class="container">
+<main>
+   <p class="notice"><%= notice %></p>
+   <% if user_signed_in? %>
+<%= current_user.email %>
+ <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
+<% else %>
+   <%= form_for(:user, :url => session_path(:user)) do |f| %>
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %>
+  <%= f.submit 'Sign in' %>
+  <%= link_to "Forgot your password?", new_password_path(:user) %>
+<% end %>
+<% end %>
+       <p class="alert"><%= alert %></p>
+    <%= yield %>
+    </main>
+  </div>
+  </body>
+</html>

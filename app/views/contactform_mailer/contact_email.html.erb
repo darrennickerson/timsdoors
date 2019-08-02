@@ -1,0 +1,20 @@
+
+<style>
+a[href^="tel:"] {
+  color: orange;
+  text-decoration: none;
+}
+a[href^="tel:"]:before {
+  content: "\260e";
+  margin-right: 0.5em;
+}
+</style>
+<h2>Contact from email from <%= @contact.name %></h2>
+<h4>Phone: <a href="tel:<%= @contact.phone %>"><%= @contact.phone %></a></h4> 
+<h4>Email: <a href="mailto:<%= @contact.email %>"><%= @contact.email %></a></h4>
+
+<p><%= @contact.comment %></p>
+
+
+<em>This is an email from Timsdoors.com, it is saved in the
+database as well as email.</em>

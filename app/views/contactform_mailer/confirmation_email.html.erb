@@ -1,0 +1,17 @@
+<style>
+a[href^="tel:"] {
+  color: orange;
+  text-decoration: none;
+}
+a[href^="tel:"]:before {
+  content: "\260e";
+  margin-right: 0.5em;
+}
+</style>
+
+<h1>Thank you <%= @contact.name %> we have received your email and will respond as soon as possible</h1>
+<h2>Contact from email from <%= @contact.name %></h2>
+<h4>Phone: <a href="tel:<%= @contact.phone %>"><%= @contact.phone %></a></h4> 
+<h4>Email: <a href="mailto:<%= @contact.email %>"><%= @contact.email %></a></h4>
+
+<p><%= @contact.comment %></p>
