@@ -29,18 +29,10 @@
 </ul>
   </div>
 
-  <nav>
-  <ul>
-  <li><%= link_to 'Home', root_path %></li>
-  <li><%= link_to 'Services', services_path %></li>
-  <li> <%= link_to 'About', about_path %></li>
-  <li><%= link_to 'Customer Area', '#' %></li>
-  <li><%= link_to 'Contact Us', contact_us_path %></li>
-  </ul>
-</nav>
+ 
 </div>
 <div class="container">
-<main>
+
    <p class="notice"><%= notice %></p>
    <% if user_signed_in? %>
 <%= current_user.email %>
@@ -56,8 +48,18 @@
 <% end %>
 <% end %>
        <p class="alert"><%= alert %></p>
+
+    </div>
+     <div class="fullWidthImage">
+     
+    </div>
+    <div class="fullWidthContent">
+    <div class="container">
+   
     <%= yield %>
-    </main>
+    </div>
+    </div>
+   
   </div>
   </body>
 </html>
