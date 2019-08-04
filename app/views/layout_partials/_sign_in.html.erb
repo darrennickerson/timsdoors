@@ -1,0 +1,18 @@
+<%= image_tag('customer.png') %>
+<% if user_signed_in? %>
+<%= current_user.email %>
+ <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
+<% else %>
+ <div class="form-group">
+   <%= form_for(:user, :url => session_path(:user)) do |f| %>
+ 
+  <%= f.text_field :email, class: 'form-control', placeholder: 'Your Email' %>
+  <%= f.password_field :password, class: 'form-control', placeholder: 'Your Password' %>
+ 
+  <%= f.submit 'Sign in', class: 'btn btn-success' %>
+ 
+   <%= link_to "Forgot your password?", new_password_path(:user) %>
+<% end %>
+</div>
+<% end %>
+

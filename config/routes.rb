@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'static#home'
   resources :contacts
   get 'thank-you', to: 'contacts#confirmation'
-
+  get 'contact-us', to: 'contacts#new'
 
   # static routes
   get 'admin/home'
