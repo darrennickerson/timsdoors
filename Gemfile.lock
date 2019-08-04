@@ -106,6 +106,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
+    mailgunner (2.6.0)
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.2)
@@ -229,6 +230,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  mailgunner
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.3, >= 5.2.2.1)
