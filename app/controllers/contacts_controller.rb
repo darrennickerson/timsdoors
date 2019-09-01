@@ -28,8 +28,8 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        #ContactformMailer.with(contact: @contact).contact_email.deliver_now
-       # ContactformMailer.with(contact: @contact).confirmation_email.deliver_now
+        ContactformMailer.with(contact: @contact).contact_email.deliver_now
+        ContactformMailer.with(contact: @contact).confirmation_email.deliver_now
         format.html { redirect_to thank_you_path, notice: 'Message sent successfully.' }
         format.json { render :show, status: :created, location: @contact }
       else
