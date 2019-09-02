@@ -33,7 +33,15 @@
   <%= link_to('Contact', contact_us_path, class: 'nav-link')%>
   </li>
   <li class="nav-item">
+  <% if user_signed_in? %>
+  <% if current_user.admin == true %>
+  <%= link_to('Admin Panel', admin_home_path, class: 'nav-link')%>
+  <% else %>
+  <%= link_to('Customer Dashboard', root_path, class: 'nav-link')%>
+  <% end %>
+  <% else %>
   <%= link_to('Customer Login', new_user_session_path, class: 'nav-link')%>
+  <% end %>
   </li>
  
 </ul>

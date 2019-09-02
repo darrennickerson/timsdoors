@@ -1,6 +1,13 @@
 <%= image_tag('customer.png') %>
 <% if user_signed_in? %>
 <%= current_user.email %>
+
+<% if current_user.admin == true %>
+<%= link_to('Admin Panel', admin_home_path) %>
+<% else %>
+<%= link_to('User Dashboard', root_path) %>
+<% end %>
+
  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
 <% else %>
  <div class="form-group">

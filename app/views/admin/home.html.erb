@@ -1,7 +1,7 @@
 <h2> Tims doors Admin</h2>
 <div class="sidebar">
 <ul class="admin_menu">
-<li><%= link_to "contact requests", contacts_path %> </li>
+<li><%= link_to "contact requests", contacts_path %> <span class="badge badge-light"><%= Contact.where(read: false).count %></span> </li>
 <li><%= link_to "Inventory", products_path %> </li>
 
 </ul>

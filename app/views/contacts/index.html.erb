@@ -20,9 +20,10 @@
         <td><%= contact.name %></td>
         <td><%= contact.phone %></td>
         <td><%= contact.comment %></td>
+        <td><%= contact.read %></td>
         <td><%= link_to 'Show', contact %></td>
         <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'This will delete everything out of the database. Make sure you have everything written down!' } %></td>
       </tr>
     <% end %>
   </tbody>

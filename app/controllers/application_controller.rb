@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
       flash[:notice] = "Page doesn't exist"
     end
+
+   
+    
+      
   
 end
     protected

@@ -2,11 +2,15 @@ class ContactformMailer < ApplicationMailer
    
     def contact_email
         @contact = params[:contact]
-        mail(to: 'timcrabbe123@hotmail.com', from: @contact.email,  subject: @contact.name)
+        email_with_name = %("#{@contact.name}" <#{@contact.email}>)
+        mail(to: 'Tims Overhead Doors <timcrabbe123@hotmail.com>', from: email_with_name,  subject: 'Website Contact From #{@contact.name}')
         
     end
     def confirmation_email
+        
         @contact = params[:contact]
-        mail(to: @contact.email, from: 'timcrabbe123@hotmail.com' ,  subject: 'We received your email!')
+        attachments.inline["timsdoors.png"] = File.read("#{Rails.root}/app/assets/images/timsdoors.png")
+        email_with_name = %("#{@contact.name}" <#{@contact.email}>)
+        mail(to: email_with_name, from: 'Tims Overhead Doors <timcrabbe123@hotmail.com>' ,  subject: 'We received your email!')
     end
 end

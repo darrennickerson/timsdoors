@@ -10,6 +10,8 @@ class ContactsController < ApplicationController
   # GET /contacts/1
   # GET /contacts/1.json
   def show
+    @contact.read = true
+    @contact.save
   end
 
   # GET /contacts/new
@@ -25,7 +27,7 @@ class ContactsController < ApplicationController
   # POST /contacts.json
   def create
     @contact = Contact.new(contact_params)
-
+    @contact.read = false
     respond_to do |format|
       if @contact.save
         ContactformMailer.with(contact: @contact).contact_email.deliver_now
@@ -67,6 +69,8 @@ class ContactsController < ApplicationController
     
   end
 
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
@@ -75,6 +79,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:email, :name, :phone, :comment)
+      params.require(:contact).permit(:email, :name, :phone, :comment, :read)
     end
 end
