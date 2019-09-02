@@ -1,8 +1,13 @@
-<h2> Tims doors Admin</h2>
-<div class="sidebar">
+<h2 class="main_title"> Tim's Overhead Doors Admin</h2>
+<div class="row">
+<div class="col-9">
+<h4>Total Number of Users <%= User.all.count %></h4>
+</div>
+<div class="col-3">
+<h3 class="main_title">Menu</h3>
 <ul class="admin_menu">
 <li><%= link_to "contact requests", contacts_path %> <span class="badge badge-light"><%= Contact.where(read: false).count %></span> </li>
 <li><%= link_to "Inventory", products_path %> </li>
-
 </ul>
+</div>
 </div>
