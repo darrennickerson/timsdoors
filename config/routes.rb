@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :products
   
-  root 'static#home'
+  root 'contacts#new'
   resources :contacts
   get 'thank-you', to: 'contacts#confirmation'
   get 'contact-us', to: 'contacts#new'

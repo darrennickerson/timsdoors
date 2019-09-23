@@ -3,7 +3,7 @@ class ContactformMailer < ApplicationMailer
     def contact_email
         @contact = params[:contact]
         email_with_name = %("#{@contact.name}" <#{@contact.email}>)
-        mail(to: 'Tims Overhead Doors <timcrabbe123@hotmail.com>', from: email_with_name,  subject: 'Website Contact From #{@contact.name}')
+        mail(to: 'timcrabbe123@hotmail.com, darrennickerson30@gmail.com', from: email_with_name,  subject: 'Website Contact From #{@contact.name}')
         
     end
     def confirmation_email
