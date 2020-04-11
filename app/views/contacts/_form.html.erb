@@ -28,6 +28,7 @@
     <%= form.text_area :comment, class: "form-control form-control-lg", placeholder: "Your Message" %>
   </div>
 
+<%= form.invisible_captcha :subtitle %>
   <div class="actions">
     <%= form.submit "Send Message", class: "btn btn-success" %>
   </div>
